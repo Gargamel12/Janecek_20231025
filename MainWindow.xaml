@@ -7,10 +7,21 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Margin="10,10,10,10" Grid.RowSpan="2">
+            <TextBlock Text="Počet řádků:" Height="19"/>
+            <TextBox x:Name="rowTextbox" Width="50" Height="25"/>
+            <TextBlock Text="Počet sloupců: " Height="25"/>
+            <TextBox x:Name="columnTextbox" Width="50" Height="25"/>
+            <TextBlock Text="Barvy: " Height="25"/>
+            <TextBox x:Name="colorTextbox"  Width="50" Height="25"/>
+            <Button Content="Generovat" Click="Generate_Grid" Height="25"/>
+        </StackPanel>
+        <ScrollViewer>
+            <Grid x:Name="dynamicGrid" Background="LightGray"/>
+        </ScrollViewer>
     </Grid>
 </Window>
